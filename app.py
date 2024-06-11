@@ -1,13 +1,12 @@
+import os
+
 from PIL import Image
 from dotenv import load_dotenv
-
-load_dotenv()  # loading the environment variables
-
 import streamlit as st
 import base64
 import google.generativeai as genai
-import os
 
+load_dotenv()  # loading the environment variables
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
@@ -57,7 +56,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image.", use_column_width=True)
 
-submit = st.button("Ask")
+submit = st.button("Submit")
 
 # when submit button is clicked
 
